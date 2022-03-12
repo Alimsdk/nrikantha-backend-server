@@ -2,7 +2,7 @@ const express=require('express');
 const app=express();
 const cors=require('cors');
 require('dotenv').config()
-const port=8080;
+const port=process.env.PORT || 8080;
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const fileUpload=require('express-fileupload');
 
@@ -78,7 +78,7 @@ async function run() {
       const user=req.body;
       const result=await usersCollection.insertOne(user);
       res.json(result);
-    })
+    });
 
     app.put('/users', async (req, res) => {
       const user = req.body;
@@ -142,7 +142,7 @@ run().catch(console.dir);
 
 
 app.get('/',async(req,res)=>{
-    res.send("Hello from Nrikantha server");
+    res.send("Hey I am working on Nrikantha");
 })
 
 
