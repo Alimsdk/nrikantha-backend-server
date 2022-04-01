@@ -6,8 +6,6 @@ const port=process.env.PORT || 8080;
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const fileUpload=require('express-fileupload');
 
-// nrikanthaAdmin
-// WKiPKO9BXdLpBtmB
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ofdnr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
